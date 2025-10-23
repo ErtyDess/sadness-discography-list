@@ -1,1 +1,794 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sadness – Discography</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+      margin: 0;
+      padding: 40px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #f4a;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      box-shadow: 0 0 10px #000;
+    }
+    th, td {
+      border-bottom: 1px solid #333;
+      padding: 12px;
+      text-align: left;
+      vertical-align: middle;
+    }
+    th {
+      background: #222;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    tr:hover {
+      background: #222;
+    }
+    img.album-cover {
+      width: 200px;
+      height: auto;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    img.album-cover:hover {
+      transform: scale(1.05);
+    }
+    a {
+      color: #88f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Modal per visualizzare la cover full */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 6px;
+      box-shadow: 0 0 20px #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sadness – Complete Discography</h1>
+
+  <h2>Releases</h2>
+  <table>
+    <tr>
+      <th>Cover</th>
+      <th>Title</th>
+      <th>Released</th>
+      <th>Type</th>
+      <th>Link</th>
+      <th>Notes</th>
+    </tr>
+
+    <tr>
+      <td><img src="img/close.jpg" class="album-cover" alt="Close" onclick="openModal(this.src)" /></td>
+      <td><b>Close</b></td>
+      <td>July 10, 2014</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/close" target="_blank">Bandcamp</a></td>
+      <td>alternate cover: <img src="img/close2.jpg" class="album-cover" alt="Close" onclick="openModal(this.src)" /></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/fda.jpg" class="album-cover" alt="Fading Days Away" onclick="openModal(this.src)" /></td>
+      <td><b>Fading Days Away...</b></td>
+      <td>October 18, 2014</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/fading-days-away" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/todespair.jpg" class="album-cover" alt="To Despair Of..." onclick="openModal(this.src)" /></td>
+      <td><b>To Despair Of...</b></td>
+      <td>November 11, 2014</td>
+      <td>Demo</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/to-despair-of" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/and-longing-are-the-endless-waves.jpg" class="album-cover" alt="...and Longing / Are the Endless Waves" onclick="openModal(this.src)" /></td>
+      <td><b>...and Longing / Are the Endless Waves</b></td>
+      <td>March 6th, 2015</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/and-longing-are-the-endless-waves" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/greyness-of-a-young-despondency.jpg" class="album-cover" alt="Greyness of a Young Despondency" onclick="openModal(this.src)" /></td>
+      <td><b>Greyness of a Young Despondency</b></td>
+      <td>March 6th, 2015</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/greyness-of-a-young-despondency" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/wounded-solitude.jpg" class="album-cover" alt="Wounded Solitude" onclick="openModal(this.src)" /></td>
+      <td><b>Wounded Solitude</b></td>
+      <td>March 6th, 2015</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/wounded-solitude" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/distances.jpg" class="album-cover" alt="Distances..." onclick="openModal(this.src)" /></td>
+      <td><b>Distances...</b></td>
+      <td>March 14th, 2015</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/distances" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    <tr>
+      <td><img src="img/the-rain-that-falls-alone.jpg" class="album-cover" alt="The Rain That Falls Alone..." onclick="openModal(this.src)" /></td>
+      <td><b>The Rain That Falls Alone...</b></td>
+      <td>March 16th, 2015</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/the-rain-that-falls-alone" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/a-perfect-day-sadness-city-of-dawn.jpg" class="album-cover" alt="A Perfect Day / Sadness / City of Dawn" onclick="openModal(this.src)" /></td>
+      <td><b>A Perfect Day / Sadness / City of Dawn</b></td>
+      <td>April 3rd, 2015</td>
+      <td>Split</td>
+      <td><a href="https://aperfectday.bandcamp.com/album/a-perfect-day-sadness-city-of-dawn" target="_blank">Bandcamp</a></td>
+      <td>songs present in"compilation": <br/><b>Untitled, Miss.., Tainted Love</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/farewell-from-distant-sounds.jpg" class="album-cover" alt="Farewell from Distant Sounds" onclick="openModal(this.src)" /></td>
+      <td><b>Farewell from Distant Sounds</b></td>
+      <td>April 6th, 2015</td>
+      <td>Split</td>
+      <td><a href="https://stellaferamusic.bandcamp.com/album/farewell-from-distant-sounds" target="_blank">Bandcamp</a></td>
+      <td>songs present in"compilation": <br/><b>Verbrennen, Enshroud, Untitled IV</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/such-a-short-time.jpg" class="album-cover" alt="Such a Short Time..." onclick="openModal(this.src)" /></td>
+      <td><b>Such a Short Time...</b></td>
+      <td>January 2nd, 2016</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/such-a-short-time" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/somewhere-along-our-memory.jpg" class="album-cover" alt="Somewhere Along Our Memory" onclick="openModal(this.src)" /></td>
+      <td><b>Somewhere Along Our Memory</b></td>
+      <td>January 3rd, 2016</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/somewhere-along-our-memory" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/to-have-ever-had.jpg" class="album-cover" alt="To Have Ever Had" onclick="openModal(this.src)" /></td>
+      <td><b>To Have Ever Had</b></td>
+      <td>January 4th, 2016</td>
+      <td>Demo</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/to-have-ever-had" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/acjetec.jpg" class="album-cover" alt="Acjétéć" onclick="openModal(this.src)" /></td>
+      <td><b>Acjétéć</b></td>
+      <td>January 8th, 2016</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/acj-t-c" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/mariposa.jpg" class="album-cover" alt="Mariposa" onclick="openModal(this.src)" /></td>
+      <td><b>Mariposa</b></td>
+      <td>February 10th, 2016</td>
+      <td>Demo</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/mariposa" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/an-open-letter-sadness.jpg" class="album-cover" alt="An Open Letter / Sadness" onclick="openModal(this.src)" /></td>
+      <td><b>An Open Letter / Sadness</b></td>
+      <td>February 17th, 2016</td>
+      <td>Split</td>
+      <td><a href="https://anopenletter.bandcamp.com/album/an-open-letter-sadness" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation": <br /><b>Y la lluvia cae</b><br />
+        songs present in "compilation two": <br /><b>afar</b><br />
+        (but on "compilation two" afar is longer
+        and newer version)
+      </td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/demo-11.jpg" class="album-cover" alt="Demo 11" onclick="openModal(this.src)" /></td>
+      <td><b>Demo 11</b></td>
+      <td>July 16th, 2016</td>
+      <td>Demo</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/demo-11" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/tundra.jpg" class="album-cover" alt="Tundra" onclick="openModal(this.src)" /></td>
+      <td><b>Tundra</b></td>
+      <td>July 27th, 2016</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/tundra" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/rose-lavender.jpg" class="album-cover" alt="Rose / Lavender" onclick="openModal(this.src)" /></td>
+      <td><b>Rose / Lavender</b></td>
+      <td>November 1st, 2016</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/rose-lavender" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/otro.jpg" class="album-cover" alt="Otro" onclick="openModal(this.src)" /></td>
+      <td><b>Otro</b></td>
+      <td>January 19th, 2017</td>
+      <td>EP</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/otro" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/leave.jpg" class="album-cover" alt="Leave" onclick="openModal(this.src)" /></td>
+      <td><b>Leave</b></td>
+      <td>March 21st, 2017</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/leave" target="_blank">Bandcamp</a></td>
+      <td class="notes">new version released July 27, 2018: <a href="https://sadnessmusic.bandcamp.com/album/leave-2" target="_blank">link</a><img src="img/leave2.jpg" class="album-cover" alt="Leave" onclick="openModal(this.src)" /></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/imperfect.jpg" class="album-cover" alt="Imperfect" onclick="openModal(this.src)" /></td>
+      <td><b>Imperfect</b></td>
+      <td>May 20th, 2017</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/imperfect" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation": <br /><b>Vivify</b><br /></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/sun-into-water.jpg" class="album-cover" alt="Sun into Water" onclick="openModal(this.src)" /></td>
+      <td><b>Sun into Water</b></td>
+      <td>October 24th, 2017</td>
+      <td>EP</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/sun-into-water" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/rain.jpg" class="album-cover" alt="Rain" onclick="openModal(this.src)" /></td>
+      <td><b>Rain</b></td>
+      <td>August 27th, 2018</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/rain" target="_blank">Bandcamp</a></td>
+      <td class="notes">second version with logo on cover: <a href="https://sadnessmusic.bandcamp.com/album/rain-2" target="_blank">link</a><img src="img/rain2.jpg" class="album-cover" alt="Rain" onclick="openModal(this.src)" /></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/circle-of-veins.jpg" class="album-cover" alt="Circle of Veins" onclick="openModal(this.src)" /></td>
+      <td><b>Circle of Veins</b></td>
+      <td>March 24th, 2019</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/circle-of-veins" target="_blank">Bandcamp</a></td>
+      <td class="notes">Alt version released March 27, 2019 with a bonus track: <a href="https://sadnessmusic.bandcamp.com/album/circle-of-veins-2" target="_blank">link</a><br/><b>Eye of Prima alternate version (bonus track) </b></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/i-want-to-be-there.jpg" class="album-cover" alt="I Want to Be There" onclick="openModal(this.src)" /></td>
+      <td><b>I Want to Be There</b></td>
+      <td>April 7th, 2019</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/i-want-to-be-there-2" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/sounds-of-melancholy.jpg" class="album-cover" alt="Sounds of Melancholy" onclick="openModal(this.src)" /></td>
+      <td><b>Sounds of Melancholy</b></td>
+      <td>April 28th, 2019</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/sounds-of-melancholy" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation": <br /><b>You'll Just Forget</b><br />Also released as a single: <img src="img/youlljustforget.jpg" class="album-cover" alt="You'll Just Forget" onclick="openModal(this.src)" /></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/atna.jpg" class="album-cover" alt="Atna" onclick="openModal(this.src)" /></td>
+      <td><b>Atna</b></td>
+      <td>February 5th, 2020</td>
+      <td>EP</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/atna" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/alluring-the-distant-eye.jpg" class="album-cover" alt="Alluring the Distant Eye" onclick="openModal(this.src)" /></td>
+      <td><b>Alluring the Distant Eye</b></td>
+      <td>March 29th, 2020</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/alluring-the-distant-eye-2" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/hiraeth.jpg" class="album-cover" alt="Hiraeth" onclick="openModal(this.src)" /></td>
+      <td><b>Hiraeth</b></td>
+      <td>May 1st, 2020</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/hiraeth" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation": <br /><b>For Everything, May, I Was Born in Two Bodies</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/holding.jpg" class="album-cover" alt="Holding" onclick="openModal(this.src)" /></td>
+      <td><b>Holding</b></td>
+      <td>November 8th, 2020</td>
+      <td>EP</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/holding" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/compilation.jpg" class="album-cover" alt="compilation" onclick="openModal(this.src)" /></td>
+      <td><b>compilation</b></td>
+      <td>February 16th, 2021</td>
+      <td>Compilation</td>
+      <td></td>
+      <td class="notes">contains songs from previous splits</td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/agnosia.jpg" class="album-cover" alt="Agnosia" onclick="openModal(this.src)" /></td>
+      <td><b>Agnosia</b></td>
+      <td>July 5th, 2021</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/agnosia" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation two": <br /><b>In a memory</b></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/rain-chamber.jpg" class="album-cover" alt="Rain Chamber" onclick="openModal(this.src)" /></td>
+      <td><b>Rain Chamber</b></td>
+      <td>September 9th, 2021</td>
+      <td>EP</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/rain-chamber-2" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/ataraxy.jpg" class="album-cover" alt="Ataraxy" onclick="openModal(this.src)" /></td>
+      <td><b>Ataraxy</b></td>
+      <td>September 24th, 2021</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/ataraxy" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation two": <br /><b>Be Happy</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/motionless-watching-you.jpg" class="album-cover" alt="Motionless, Watching You" onclick="openModal(this.src)" /></td>
+      <td><b>Motionless, Watching You</b></td>
+      <td>October 24th, 2021</td>
+      <td>EP</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/motionless-watching-you" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/compilation-two.jpg" class="album-cover" alt="compilation two" onclick="openModal(this.src)" /></td>
+      <td><b>compilation two</b></td>
+      <td>October 24th, 2021</td>
+      <td>Compilation</td>
+      <td></td>
+      <td class="notes">contains songs from previous splits</td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/april-sunset.jpg" class="album-cover" alt="April Sunset" onclick="openModal(this.src)" /></td>
+      <td><b>April Sunset</b></td>
+      <td>October 29th, 2021</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/april-sunset-2" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/mhhhhh.jpg" class="album-cover" alt="_____" onclick="openModal(this.src)" /></td>
+      <td><b>_____</b></td>
+      <td>November 5th, 2021</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/--2" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/cut-my-wings.jpg" class="album-cover" alt="Cut my wings" onclick="openModal(this.src)" /></td>
+      <td><b>Cut my wings</b></td>
+      <td>November 27th, 2021</td>
+      <td>Collaboration</td>
+      <td><a href="https://faithful7.bandcamp.com/track/cut-my-wings-w-sadness" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/sadness-unreqvited.jpg" class="album-cover" alt="Sadness / Unreqvited" onclick="openModal(this.src)" /></td>
+      <td><b>Sadness / Unreqvited</b></td>
+      <td>February 14th, 2022</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/sadness-unreqvited" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation three": <br /><b>Redroom Autumn Tensions</b><br />Also released as a single: <img src="img/redroomautumntensions.jpg" class="album-cover" alt="Redroom Autumn Tensions" onclick="openModal(this.src)" /></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/tortuga.jpg" class="album-cover" alt="Tortuga" onclick="openModal(this.src)" /></td>
+      <td><b>Tortuga</b></td>
+      <td>March 28th, 2022</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/tortuga" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/old-songs-2015.jpg" class="album-cover" alt="old songs 2015" onclick="openModal(this.src)" /></td>
+      <td><b>old songs 2015</b></td>
+      <td>March 28th, 2022</td>
+      <td>Compilation</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/old-songs-2015" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/i.jpg" class="album-cover" alt="I" onclick="openModal(this.src)" /></td>
+      <td><b>I</b></td>
+      <td>March 29th, 2022</td>
+      <td>EP</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/i" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/within-the-lightseam.jpg" class="album-cover" alt="Within the Lightseam" onclick="openModal(this.src)" /></td>
+      <td><b>Within the Lightseam</b></td>
+      <td>March 30th, 2022</td>
+      <td>EP</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/within-the-lightseam" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/old-songs-2014.jpg" class="album-cover" alt="Old Songs 2014" onclick="openModal(this.src)" /></td>
+      <td><b>Old Songs 2014</b></td>
+      <td>March 30th, 2022</td>
+      <td>Compilation</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/old-songs-2014" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/our-time-is-here.jpg" class="album-cover" alt="Our Time Is Here" onclick="openModal(this.src)" /></td>
+      <td><b>Our Time Is Here</b></td>
+      <td>April 2nd, 2022</td>
+      <td>EP</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/our-time-is-here" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/kiss-in-october-2017.jpg" class="album-cover" alt="Kiss in October (2017)" onclick="openModal(this.src)" /></td>
+      <td><b>Kiss in October (2017)</b></td>
+      <td>June 20th, 2022</td>
+      <td>Single</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/track/kiss-in-october-2017" target="_blank">Bandcamp</a></td>
+      <td class="notes">new edition of the old <b>"Kiss in October"</b> from <b>"Somewhere Along Our Memory"</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/daydream-flowers.jpg" class="album-cover" alt="Daydream Flowers" onclick="openModal(this.src)" /></td>
+      <td><b>Daydream Flowers</b></td>
+      <td>December 29th, 2022</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/daydream-flowers" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation three": <br /><b>2010 Flowers, 5:00 PM on a Friday</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/sadness-for-her.jpg" class="album-cover" alt="Sadness // For Her..." onclick="openModal(this.src)" /></td>
+      <td><b>Sadness // For Her...</b></td>
+      <td>January 4th, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/sadness-for-her" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation three": <br /><b>encuéntrame</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/springgarden.jpg" class="album-cover" alt="springgarden" onclick="openModal(this.src)" /></td>
+      <td><b>springgarden</b></td>
+      <td>March 13th, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/springgarden" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation three": <br /><b>"lowsun in a glistening, best friend (feat. abriction)</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/sadness-abriction.jpg" class="album-cover" alt="sadness // abriction" onclick="openModal(this.src)" /></td>
+      <td><b>sadness // abriction</b></td>
+      <td>March 27th, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/sadness-abriction" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation three": <br /><b>something in the summer rain, please...</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/compilation-three.jpg" class="album-cover" alt="compilation three" onclick="openModal(this.src)" /></td>
+      <td><b>compilation three</b></td>
+      <td>April 6th, 2023</td>
+      <td>Compilation</td>
+      <td></td>
+      <td class="notes">contains songs from previous splits</td>
+    </tr>
+
+    <tr>
+      <td><img src="img/old-songs-2013.jpg" class="album-cover" alt="Old Songs 2013" onclick="openModal(this.src)" /></td>
+      <td><b>Old Songs 2013</b></td>
+      <td>April 23rd, 2023</td>
+      <td>Compilation</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/old-songs-2013" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/cherish.jpg" class="album-cover" alt="Cherish" onclick="openModal(this.src)" /></td>
+      <td><b>Cherish</b></td>
+      <td>July 6th, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/cherish" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation four": <br /><b>routine colors, all of the beautiful moments</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/summerset-streetlights.jpg" class="album-cover" alt="Summerset Streetlights" onclick="openModal(this.src)" /></td>
+      <td><b>Summerset Streetlights</b></td>
+      <td>July 19th, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/summerset-streetlights" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation four": <br /><b>elisa in summer night, something's missing</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/compilation-four.jpg" class="album-cover" alt="compilation four" onclick="openModal(this.src)" /></td>
+      <td><b>compilation four</b></td>
+      <td>July 19th, 2023</td>
+      <td>Compilation</td>
+      <td></td>
+      <td class="notes">contains songs from previous and next splits</td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/remembering-distant-stars.jpg" class="album-cover" alt="Remembering Distant Stars" onclick="openModal(this.src)" /></td>
+      <td><b>Remembering Distant Stars</b></td>
+      <td>July 26th, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/remembering-distant-stars" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation four": <br /><b>I want to feel like me</b></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/secret-green.jpg" class="album-cover" alt="Secret Green" onclick="openModal(this.src)" /></td>
+      <td><b>Secret Green</b></td>
+      <td>October 4th, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/secret-green" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation four": <br /><b>spring twilight, shine so bright</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/sadness-vulning.jpg" class="album-cover" alt="Sadness / Vulning" onclick="openModal(this.src)" /></td>
+      <td><b>Sadness / Vulning</b></td>
+      <td>October 20th, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/sadness-vulning" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation five": <br /><b>cry enough, sleep</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/springnight-moment.jpg" class="album-cover" alt="Springnight Moment" onclick="openModal(this.src)" /></td>
+      <td><b>Springnight Moment</b></td>
+      <td>October 24th, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/springnight-moment" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation five": <br /><b>streetlight</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/resplendence.jpg" class="album-cover" alt="Resplendence" onclick="openModal(this.src)" /></td>
+      <td><b>Resplendence</b></td>
+      <td>November 3rd, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/resplendence" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation five": <br /><b>Details In Numbercolor, Histrionic and Granted</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/while-youre-still.jpg" class="album-cover" alt="While You're Still" onclick="openModal(this.src)" /></td>
+      <td><b>While You're Still</b></td>
+      <td>December 24th, 2023</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/while-youre-still" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation five": <br /><b>incomplete places, while you're still</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/to-you.jpg" class="album-cover" alt="To You..." onclick="openModal(this.src)" /></td>
+      <td><b>To You...</b></td>
+      <td>February 23rd, 2024</td>
+      <td>Split</td>
+      <td><a href="https://cantiereticiproductions.bandcamp.com/album/to-you?search_item_id%3D7" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation five": <br /><b>Despair Lathers, February</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/the-most-beautiful-girl-in-the-world.jpg" class="album-cover" alt="The Most Beautiful Girl in the World" onclick="openModal(this.src)" /></td>
+      <td><b>The Most Beautiful Girl in the World</b></td>
+      <td>August 19th, 2024</td>
+      <td>Single</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/track/the-most-beautiful-girl-in-the-world" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/your-perfect-hands-and-my-repeated-words.jpg" class="album-cover" alt="Your Perfect Hands and My Repeated Words" onclick="openModal(this.src)" /></td>
+      <td><b>Your Perfect Hands and My Repeated Words</b></td>
+      <td>August 23rd, 2024</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/your-perfect-hands-and-my-repeated-words" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/i-want-to-make-something-as-beautiful-as-you.jpg" class="album-cover" alt="I Want to Make Something as Beautiful as You" onclick="openModal(this.src)" /></td>
+      <td><b>I Want to Make Something as Beautiful as You</b></td>
+      <td>August 24th, 2024</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/i-want-to-make-something-as-beautiful-as-you" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/i-love-you.jpg" class="album-cover" alt="I Love You" onclick="openModal(this.src)" /></td>
+      <td><b>I Love You</b></td>
+      <td>August 30th, 2024</td>
+      <td>Album</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/i-love-you" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+
+    <tr>
+      <td><img src="img/burning-as-the-first-light.jpg" class="album-cover" alt="Burning as the First Light" onclick="openModal(this.src)" /></td>
+      <td><b>Burning as the First Light</b></td>
+      <td>December 19th, 2024</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/burning-as-the-first-light" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation five": <br /><b>"every edge of your name, burning", "watching treeflowers from my window"<br/></b>on the compilation the second song is called: watching magenta treeflowers from my window</td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/magogaio-sadness.jpg" class="album-cover" alt="Magogaio / Sadness" onclick="openModal(this.src)" /></td>
+      <td><b>Magogaio / Sadness</b></td>
+      <td>February 24th, 2025</td>
+      <td>Split</td>
+      <td><a href="https://magogaio.bandcamp.com/album/magogaio-sadness" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation five": <br /><b>Secrets In Layers Of Abstraction, 8.00 PM On A Thursday, Pretty Face</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/that-lasts-forever.jpg" class="album-cover" alt="That Lasts Forever" onclick="openModal(this.src)" /></td>
+      <td><b>That Lasts Forever</b></td>
+      <td>July 8th, 2025</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/that-lasts-forever" target="_blank">Bandcamp</a></td>
+      <td class="notes">songs present in "compilation five": <br /><b>glistening in the march lowsun, i left a message for you, something in the distance, new body</b></td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/compilation-five.jpg" class="album-cover" alt="compilation five" onclick="openModal(this.src)" /></td>
+      <td><b>compilation five</b></td>
+      <td>July 15th, 2025</td>
+      <td>Compilation</td>
+      <td></td>
+      <td class="notes">contains songs from previous splits</td>
+    </tr>
+    
+    <tr>
+      <td><img src="img/dusk-garden.jpg" class="album-cover" alt="Dusk Garden" onclick="openModal(this.src)" /></td>
+      <td><b>Dusk Garden</b></td>
+      <td>October 17th, 2025</td>
+      <td>Split</td>
+      <td><a href="https://sadnessmusic.bandcamp.com/album/dusk-garden" target="_blank">Bandcamp</a></td>
+      <td class="notes"></td>
+    </tr>
+    
+  </table>
+
+  <h2>Compilations</h2>
+  <table>
+    <tr>
+      <th>Cover</th>
+      <th>Title</th>
+      <th>Released</th>
+      <th>Songs</th>
+    </tr>
+    <tr>
+      <td><img src="https://sadnessmusic.bandcamp.com/path/to/comp1.jpg" class="album-cover" alt="Compilation One" onclick="openModal(this.src)" /></td>
+      <td><b>Compilation One</b></td>
+      <td>February 16, 2021</td>
+      <td>Untitled, Miss... / Tarnished Love</td>
+    </tr>
+    <tr>
+      <td><img src="https://sadnessmusic.bandcamp.com/path/to/comp2.jpg" class="album-cover" alt="Compilation Two" onclick="openModal(this.src)" /></td>
+      <td><b>Compilation Two</b></td>
+      <td>October 24, 2021</td>
+      <td>Agnosia / Be Happy</td>
+    </tr>
+  </table>
+
+  <!-- Modal per l'immagine full -->
+  <div id="imgModal" class="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Full view" />
+  </div>
+
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("modalImg");
+      modal.style.display = "flex";
+      modalImg.src = src;
+    }
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
